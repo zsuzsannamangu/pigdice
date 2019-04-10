@@ -12,29 +12,45 @@
    <div class="container">
      <h1>Pig Dice</h1>
      <div class="row">
-       <div class="col-md-6">
-         <hr>
-         <h2>Player 1:</h2>
-         <hr>
-         <h2>Total:</h2>
-         <button type="button" class="btn1 btn-primary">Roll</button>
-         <button type="button" class="btn2 btn-primary">Hold</button>
-       </div>
-       <div class="col-md-6">
-         <hr>
-         <h2>Player 2:</h2>
-         <hr>
-         <h2>Total:</h2>
-           <button type="button" class="btn3 btn-primary">Roll</button>
-           <button type="button" class="btn4 btn-primary">Hold</button>
+      <div class="col-md-6">
+        <hr>
+        <h2>Player 1:</h2>
+        <hr>
+        <div class="player1-btn">
+          <button type="button" class="btn1 btn-primary">Roll</button>
+          <button type="button" class="btn2 btn-primary">Hold</button>
+        </div>
+        <hr>
+        <div id="player1temporary">
+          <h4>Your temporary score: <span class="player1temp"></span></h4>
+        </div>
+        <div id="player1total">
+          <h2>Your total: <span class="player1number"></span></h2>
+        </div>
+        <div class="endmessage1">
+          <h4>Now it is the other player's turn.</h4>
+        </div>
+      </div>
 
-         <!-- <div id="show-ticket">
-           <p>Movie Name: <span class="movie-name"></span></p>
-           <p>Movie Time: <span class="movie-time"></span></p>
-           <p>User Age: <span class="user-age"></span></p>
-           <div id="buttons"> -->
-           </div>
-         </div>
+      <div class="col-md-6">
+        <hr>
+        <h2>Player 2:</h2>
+        <hr>
+        <div class="player2-btn">
+          <button type="button" class="btn3 btn-primary">Roll</button>
+          <button type="button" class="btn4 btn-primary">Hold</button>
+        </div>
+        <hr>
+        <div id="player2temporary">
+          <h4>Your temporary score: <span class="player2temp"></span></h4>
+        </div>
+        <div id="player2total">
+          <h2>Your total: <span class="player2number"></span></h2>
+        </div>
+        <div class="endmessage2">
+          <h4>Now it is the other player's turn.</h4>
+        </div>
+      </div>
        </div>
      </div>
    </div>
