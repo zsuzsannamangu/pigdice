@@ -1,77 +1,45 @@
 // // Business logic
 function PlayerTotal() {
   this.grandTotal = []
-  // this.currentId = 0
+  this.currentId = 0
 }
 
-PlayerTotal.prototype.addRoll = function(total) {
-  // grandTotal.id = this.assignId();
-  this.grandTotal.push(total);
-}
-//
-// // PlayerTotal.prototype.assignId = function() {
-// //   this.currentId +=1;
-// //   return this.currentId;
-// // }
-//
-// //Business Logic for total -----
-function SmallScore(rolledNumber, currentScore) {
-  this.rolledNumber = rolledNumber
-  this.currentScore = currentScore
+PlayerTotal.prototype.addRoll = function(roll) {
+  grandTotal.id = this.assignId();
+  this.grandTotal.push(roll);
 }
 
-SmallScore.prototype.
-  return this.rolledNumber + this.currentScore;
+PlayerTotal.prototype.assignId = function() {
+  this.currentId +=1;
+  return this.currentId;
+}
 
-function roll() {
+//Business Logic for total -----
+// function SmallScore(rolledNumber, currentScore) {
+//   this.rolledNumber = rolledNumber
+//   this.currentScore = currentScore
+// }
+
+// SmallScore.prototype.
+//   return this.rolledNumber + this.currentScore;
+
+function diceRoll() {
   return (Math.floor((Math.random() * 6) + 1));;
 }
-var roll = roll();
-console.log(roll);
 
-// var roll1 = new PlayerTotal(3)
-// console.log(roll1.addRoll)
-
-// PlayerTotal.prototype.adfasdf = function() {
-//   return (this.roundScore);
-// }
-
-// function hold() {
-//   how to hold
-// }
-
-// var playerTotal = new PlayerTotal();
-//
-function attachTicketListeners() {
-  $(".btn1").on("click", function() {
-    return (Math.floor((Math.random() * 6) + 1));
+var playerTotal = new PlayerTotal();
+var roll = ''
+$(document).ready(function()  {
+  $(".btn1").click(function() {
+    var roll = diceRoll();
+    console.log(roll);
   });
-};
-
-
-// $(document).ready(function()  {
-//   $(".btn1").click(function() {
-//     var eachRoundScore = new SmallScore(
-//       var roll = Math.floor((Math.random() * 6) + 1);
-//       console.log(roll);
-//     )
-//
-//   //   var amount = bankaccount.currentBalance();
-//   //   //
-//   //   // $(".amount").number(amount);
-//   //   $("#show-balance").show();
-//   //
-//   //   console.log(amount.currentBalance())
-//   });
-// });
-
-
-
-//
-//
-//
-// Math.floor((Math.random() * 6) + 1);
-//
-//
-//
-// return (this.currentScore + this.roundScore);
+  $(".btn2").click(function() {
+    PlayerTotal.addRoll(this.id);
+    console.log(this.grandTotal);
+  });
+  $(".btn3").click(function() {
+    var roll = diceRoll();
+    console.log(roll);
+  });
+});
