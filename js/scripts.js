@@ -24,9 +24,11 @@ Player.prototype.Roll = function() {
 
 Player.prototype.Hold = function () {
   console.log("all", this.Score);
-  return this.Score += this.tempScore;
-  // this.EndTurn();
+  var totalScore = this.Score += this.tempScore;
   this.tempScore = 0;
+  return totalScore
+  // this.EndTurn();
+
 }
 
 Player.prototype.EndTurn = function() {
