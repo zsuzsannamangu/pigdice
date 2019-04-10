@@ -25,8 +25,8 @@ Player.prototype.Roll = function() {
 Player.prototype.Hold = function () {
   console.log("all", this.Score);
   return this.Score += this.tempScore;
-  this.EndTurn()
-  // this.tempScore = 0;
+  // this.EndTurn();
+  this.tempScore = 0;
 }
 
 Player.prototype.EndTurn = function() {
@@ -59,6 +59,7 @@ $(document).ready(function()  {
 
     var player1number = newPlayer.Hold();
     $(".player1number").text(player1number);
+    $(".player1temp").empty();
 
   });
   $(".btn3").click(function() {
@@ -74,6 +75,7 @@ $(document).ready(function()  {
 
     var player2number = newPlayer2.Hold();
     $(".player2number").text(player2number);
+    $(".player2temp").empty();
   });
   // $(".btn3").click(function() {
   //   var roll = diceRoll();
