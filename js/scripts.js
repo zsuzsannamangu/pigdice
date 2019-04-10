@@ -1,4 +1,4 @@
-// Business logic
+// // Business logic
 function PlayerTotal() {
   this.grandTotal = []
   // this.currentId = 0
@@ -8,48 +8,62 @@ PlayerTotal.prototype.addRoll = function(total) {
   // grandTotal.id = this.assignId();
   this.grandTotal.push(total);
 }
-
-// PlayerTotal.prototype.assignId = function() {
-//   this.currentId +=1;
-//   return this.currentId;
-// }
-
-//Business Logic for total -----
-function SmallScore(currentScore) {
+//
+// // PlayerTotal.prototype.assignId = function() {
+// //   this.currentId +=1;
+// //   return this.currentId;
+// // }
+//
+// //Business Logic for total -----
+function SmallScore(rolledNumber, currentScore) {
+  this.rolledNumber = rolledNumber
   this.currentScore = currentScore
 }
 
-PlayerTotal.prototype.adfasdf = function() {
-  return (this.roundScore);
-}
+SmallScore.prototype.
+  return this.rolledNumber + this.currentScore;
 
 function roll() {
-  var roll = ();
-  
-  Math.floor((Math.random() * 6) + 1);
-  console.log(roll);
+  return (Math.floor((Math.random() * 6) + 1));;
 }
-function hold() {
-  how to hold
-}
+var roll = roll();
+console.log(roll);
 
+// var roll1 = new PlayerTotal(3)
+// console.log(roll1.addRoll)
 
+// PlayerTotal.prototype.adfasdf = function() {
+//   return (this.roundScore);
+// }
 
-$(document).ready(function()  {
-  $(".btn1").click(function() {
-    var eachRoundScore = new SmallScore(
-      var roll = Math.floor((Math.random() * 6) + 1);
-      console.log(roll);
-    )
+// function hold() {
+//   how to hold
+// }
 
-  //   var amount = bankaccount.currentBalance();
-  //   //
-  //   // $(".amount").number(amount);
-  //   $("#show-balance").show();
-  //
-  //   console.log(amount.currentBalance())
+// var playerTotal = new PlayerTotal();
+//
+function attachTicketListeners() {
+  $(".btn1").on("click", function() {
+    return (Math.floor((Math.random() * 6) + 1));
   });
-});
+};
+
+
+// $(document).ready(function()  {
+//   $(".btn1").click(function() {
+//     var eachRoundScore = new SmallScore(
+//       var roll = Math.floor((Math.random() * 6) + 1);
+//       console.log(roll);
+//     )
+//
+//   //   var amount = bankaccount.currentBalance();
+//   //   //
+//   //   // $(".amount").number(amount);
+//   //   $("#show-balance").show();
+//   //
+//   //   console.log(amount.currentBalance())
+//   });
+// });
 
 
 
