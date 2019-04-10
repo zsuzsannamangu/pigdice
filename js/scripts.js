@@ -54,6 +54,9 @@ $(document).ready(function()  {
     var player1temp = newPlayer.Roll();
     $(".player1temp").text(player1temp);
 
+    // var player1rolled = number
+    // $(".player1rolled").text(player1rolled);
+
   });
   $(".btn2").click(function() {
     // newPlayer.Hold();
