@@ -1,4 +1,4 @@
-// // Business logic
+// // Business logic for Player
 function Player(name) {
   this.name = name;
   this.tempScore = 0;
@@ -9,8 +9,8 @@ function Player(name) {
 Player.prototype.Roll = function() {
   var number = diceRoll();
   if (number === 1) {
-    this.tempScore = 0;
     this.currentRoll = number;
+    this.EndTurn();
     return 0
   } else {
     this.currentRoll = number;
@@ -21,18 +21,18 @@ Player.prototype.Roll = function() {
 
 Player.prototype.Hold = function () {
   var totalScore = this.Score += this.tempScore;
-  this.tempScore = 0;
+  this.EndTurn();
   return totalScore
 
 }
 
-// Player.prototype.EndTurn = function() {
-//   this.tempScore = 0;
-//   //change to next player show/hide
-// }
+Player.prototype.EndTurn = function() {
+  this.tempScore = 0;
+  return 0;
+  //change to next player show/hide
+}
 
-//Business Logic for total -----
-
+//Business Logic for diceRoll -----
 function diceRoll() {
   return (Math.floor((Math.random() * 6) + 1));;
 }
@@ -43,7 +43,9 @@ $(document).ready(function()  {
   var newPlayer2 = new Player();
   var currPlayer = newPlayer
   $(".btn1").click(function() {
-    if (currPlayer === newPlayer2) {
+    if (newPlayer.currentRoll === 1 || currPlayer === newPlayer2) {
+      newPlayer.currentRoll = 0;
+      currPlayer = newPlayer2
       return
     }
     $(".endmessage2").hide();
@@ -65,8 +67,11 @@ $(document).ready(function()  {
   });
 
   $(".btn3").click(function() {
-    if (currPlayer === newPlayer) {
-      return }
+    if (newPlayer2.currentRoll === 1 || currPlayer === newPlayer) {
+      newPlayer2.currentRoll = 0;
+      currPlayer = newPlayer
+      return
+    }
     $(".endmessage1").hide();
     var player2temp = newPlayer2.Roll();
     $(".player2temp").text(player2temp);
