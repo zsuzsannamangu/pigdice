@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html>
- <head>
-   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
-   <link href="css/styles.css" rel="stylesheet" type="text/css">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-   <script src="js/scripts.js"></script>
-   <title>Pig Dice</title>
-   <title></title>
- </head>
- <body>
-   <div class="container">
-     <h1>Pig Dice</h1>
-     <div class="row">
+<head>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
+  <title>Pig Dice</title>
+  <title></title>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Pig Dice</h1>
+    </div>
+    <div class="row">
       <div class="col-md-6">
-        <hr>
+        <br>
         <h2>Player 1:</h2>
-        <hr>
+        <br>
         <div class="player1-btn">
-          <button type="button" class="btn1 btn-primary">Roll</button>
-          <button type="button" class="btn2 btn-primary">Hold</button>
+          <button type="button" class="btn1 btn-secondary">Roll</button>
+          <button type="button" class="btn2 btn-secondary">Hold</button>
         </div>
-        <hr>
+        <br>
         <div id="player1rolledNumber">
           <h4>You rolled: <span class="player1rolled"></span></h4>
         </div>
@@ -36,14 +39,14 @@
       </div>
 
       <div class="col-md-6">
-        <hr>
+        <br>
         <h2>Player 2:</h2>
-        <hr>
+        <br>
         <div class="player2-btn">
-          <button type="button" class="btn3 btn-primary">Roll</button>
-          <button type="button" class="btn4 btn-primary">Hold</button>
+          <button type="button" class="btn3 btn-secondary">Roll</button>
+          <button type="button" class="btn4 btn-secondary">Hold</button>
         </div>
-        <hr>
+        <br>
         <div id="player2rolledNumber">
           <h4>You rolled: <span class="player2rolled"></span></h4>
         </div>
@@ -57,8 +60,10 @@
           <h4>Now it is the other player's turn.</h4>
         </div>
       </div>
-       </div>
-     </div>
-   </div>
- </body>
+    </div>
+    <center>
+    <img src="img/dice.jpg" alt="An image of a dice.">
+  </div>
+</div>
+</body>
 </html>

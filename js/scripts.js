@@ -10,7 +10,7 @@ Player.prototype.Roll = function() {
   var number = diceRoll();
   if (number === 1) {
     this.currentRoll = number;
-    this.EndTurn();
+    // this.EndTurn();
     return 0
   } else {
     this.currentRoll = number;
@@ -21,34 +21,36 @@ Player.prototype.Roll = function() {
 
 Player.prototype.Hold = function () {
   var totalScore = this.Score += this.tempScore;
-  this.EndTurn();
+  // this.EndTurn();
   return totalScore
 
 }
 
-Player.prototype.EndTurn = function() {
-  this.tempScore = 0;
-  // return 0;
-  this.Game.nextPlayer();
-}
-
-function Game() {
-  this.players = [];
-  this.currentPlayerIndex = 0;
-}
-
-Game.prototype.addPlayer = function(player) {
-  this.players.push(player);
-  player.game = this;
-}
-
-Game.prototype.nextPlayer = function(){
-  var currentPlayer = this.players[this.currentPlayerIndex]
-  if (this.currentPlayerIndex === this.players.length - 1) {
-      this.currentPlayerIndex = 0 }
-      else {
-      this.currentPlayerIndex++ }
-    }
+// Player.prototype.EndTurn = function() {
+//   this.tempScore = 0;
+//   // return 0;
+//   this.newGame.nextPlayer();
+// }
+//
+// function Game() {
+//   this.players = [];
+//   this.currentPlayerIndex = 0;
+// }
+//
+// Game.prototype.addPlayer = function(player) {
+//   this.players.push(player);
+//   player.game = this;
+// }
+//
+// Game.prototype.nextPlayer = function(){
+//   var currentPlayer = this.players[this.currentPlayerIndex]
+//   if (this.currentPlayerIndex === this.players.length - 1) {
+//       this.currentPlayerIndex = 0
+//     }
+//       else {
+//       this.currentPlayerIndex++
+//     }
+// }
 
 
 //Business Logic for diceRoll -----
@@ -58,6 +60,7 @@ function diceRoll() {
 
 
 $(document).ready(function()  {
+  // var newGame = new Game();
   var newPlayer = new Player();
   var newPlayer2 = new Player();
   var currPlayer = newPlayer
