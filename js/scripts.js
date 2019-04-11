@@ -28,9 +28,28 @@ Player.prototype.Hold = function () {
 
 Player.prototype.EndTurn = function() {
   this.tempScore = 0;
-  return 0;
-  //change to next player show/hide
+  // return 0;
+  this.Game.nextPlayer();
 }
+
+function Game() {
+  this.players = [];
+  this.currentPlayerIndex = 0;
+}
+
+Game.prototype.addPlayer = function(player) {
+  this.players.push(player);
+  player.game = this;
+}
+
+Game.prototype.nextPlayer = function(){
+  var currentPlayer = this.players[this.currentPlayerIndex]
+  if (this.currentPlayerIndex === this.players.length - 1) {
+      this.currentPlayerIndex = 0 }
+      else {
+      this.currentPlayerIndex++ }
+    }
+
 
 //Business Logic for diceRoll -----
 function diceRoll() {
@@ -45,6 +64,7 @@ $(document).ready(function()  {
   $(".btn1").click(function() {
     if (newPlayer.currentRoll === 1 || currPlayer === newPlayer2) {
       newPlayer.currentRoll = 0;
+      var player2number = newPlayer2.Hold();
       currPlayer = newPlayer2
       return
     }
@@ -69,6 +89,7 @@ $(document).ready(function()  {
   $(".btn3").click(function() {
     if (newPlayer2.currentRoll === 1 || currPlayer === newPlayer) {
       newPlayer2.currentRoll = 0;
+      var player1number = newPlayer.Hold();
       currPlayer = newPlayer
       return
     }
